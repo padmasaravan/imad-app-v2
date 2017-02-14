@@ -5,8 +5,12 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+/*
+Assigning values to different sections of the Article pages. Each page's content  is created as a Javascript Object
+*/
+
 var articles = {
-    article-one: {
+    'article-one': {
         title: 'Article One |  Padma Bala',
         heading: 'Article One',
         date: 'Feb 4 2017',
@@ -40,7 +44,7 @@ var articles = {
                 </p>
                 `
     },
-    article-two: {
+    'article-two': {
         title: 'Article Two --  Padma Bala',
         heading: 'Article Two',
         date: 'Feb 14th 2017',
@@ -65,7 +69,7 @@ var articles = {
                 </p>
                 `
     },
-    article-three: {
+    'article-three': {
         title: 'Article Three --  Padma Bala',
         heading: 'Article Three',
         date: 'Feb 24th 2017',
@@ -83,6 +87,7 @@ var articles = {
     }
 };
 
+//Function to create the HTML template with the Object sent
 function createTemplate (data){
     var title = data.title;
     var heading = data.heading;
@@ -138,16 +143,11 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/:articleName', function(req,res){
-    var 
-    res.send( createTemplate(articleOne) );
-});
 
-app.get('/article-two', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/article-three', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+// To return the HTML template as the response
+app.get('/:articleName', function(req,res){
+    var articleName = req.params.articleName; // Getting the value of the parameter from the URL
+    res.send( createTemplate(articles[articleName]) );
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
