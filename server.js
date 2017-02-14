@@ -9,7 +9,7 @@ var articleOne = {
     title: 'Article One --  Padma Bala',
     heading: 'Article One',
     date: 'Feb 14th 2017',
-    content: `<div>
+    content: `
             <h4>Section 1</h4>
             <p>
                 Article One content is displayed.....
@@ -37,9 +37,43 @@ var articleOne = {
                 Article One content is displayed.....
                 Article One content is displayed.....
             </p>
-        </div>` 
+            `
 };
 
+
+var htmlTemplate = `
+<html>
+<!-- HTML file for the page Article One -->
+<head>
+    <title> ${title}   </title>
+    
+    <!-- The tag is for Mobile browsers so that the page is not zoomed out -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+     <!-- Adding the CSS elements -->
+    <link href="/ui/style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="pageBody">
+        <div>
+            <a href="/"> HOME </a>
+        </div>
+        <hr/>
+        <h2>
+            ${heading}
+        </h2>
+        <div>
+            ${date}
+        </div>
+        <div>
+            ${content}
+        </div>
+    </div>
+</body>
+</html> 
+
+`;
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
