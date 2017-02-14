@@ -40,40 +40,48 @@ var articleOne = {
             `
 };
 
-
-var htmlTemplate = `
-<html>
-<!-- HTML file for the page Article One -->
-<head>
-    <title> ${title}   </title>
+function createTemplate (data){
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
     
-    <!-- The tag is for Mobile browsers so that the page is not zoomed out -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    var htmlTemplate = `
+    <html>
+    <!-- HTML file for the page Article One -->
+    <head>
+        <title> ${title}   </title>
+        
+        <!-- The tag is for Mobile browsers so that the page is not zoomed out -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+         <!-- Adding the CSS elements -->
+        <link href="/ui/style.css" rel="stylesheet" />
     
-     <!-- Adding the CSS elements -->
-    <link href="/ui/style.css" rel="stylesheet" />
-
-</head>
-<body>
-    <div class="pageBody">
-        <div>
-            <a href="/"> HOME </a>
+    </head>
+    <body>
+        <div class="pageBody">
+            <div>
+                <a href="/"> HOME </a>
+            </div>
+            <hr/>
+            <h2>
+                ${heading}
+            </h2>
+            <div>
+                ${date}
+            </div>
+            <div>
+                ${content}
+            </div>
         </div>
-        <hr/>
-        <h2>
-            ${heading}
-        </h2>
-        <div>
-            ${date}
-        </div>
-        <div>
-            ${content}
-        </div>
-    </div>
-</body>
-</html> 
-
-`;
+    </body>
+    </html> 
+    
+    `;
+    
+    return htmlTemplate ;
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -88,7 +96,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/article-one', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.send( createTemplate(articleOne) );
 });
 
 app.get('/article-two', function(req,res){
