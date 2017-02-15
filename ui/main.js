@@ -9,11 +9,11 @@ element.innerHTML = 'New Text changed by JavaScript';
 
 var img = document.getElementById('body-img');
 var marginLeft =0;
-var moveRight = function(){
+function moveRight(){
     marginLeft = marginLeft + 1;
     img.style.marginLeft = marginLeft + 'px';
-};
-img.onclick = function()
+}
+img.onclick = function(){
     var interval = setInterval(moveRight,5);
     //img.style.marginLeft = '150px';
 }
