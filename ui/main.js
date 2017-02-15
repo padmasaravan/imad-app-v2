@@ -10,4 +10,4 @@ element.innerHTML = 'New Text changed by JavaScript';
 var img = document.getElementById('body-img');
 img.onclick = function(){
     img.style.marginLeft = '150px';
-};
+}
