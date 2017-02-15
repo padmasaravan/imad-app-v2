@@ -4,3 +4,10 @@ console.log('Loaded!');
 
 var element = document.getElementById('body-text');
 element.innerHTML = 'New Text changed by JavaScript';
+
+//Code to move the Image to right..when it is clicked on
+
+var img = document.getElementById('body-img');
+img.onClick = function(){
+    img.style.marginLeft = '100px';
+};
