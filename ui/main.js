@@ -9,5 +9,5 @@ element.innerHTML = 'New Text changed by JavaScript';
 
 var img = document.getElementById('body-img');
 img.onClick = function(){
-    img.style.marginLeft = '100px';
+    img.style.marginLeft = '150px';
 };
