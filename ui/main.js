@@ -5,10 +5,22 @@ var button = document.getElementById('count-button');
 
 button.onclick = function()
 {
-    counter++;
-    var span = document.getElementById('count-span');
-    span.innerHTML = counter.toString();
-};
+    
+    // Create a request
+    var request = new XMLHttpRequest();
+    
+    // Get the response and store it in a variable
+    request.onreadystatechange = function(){
+        if (request.readyState === XMLHttpRequest.DONE){
+            if (request.status === 200){
+                //Take action
+                var counter = request.responseText; // Response value accessed as Text
+                var span = document.getElementById('count-span');
+                span.innerHTML = counter.toString();  // Update the value of the Span element in the page
+            }
+        }
+    };
+ };
 
 /* Code to change the HTML content from Javascript
 
