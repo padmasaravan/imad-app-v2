@@ -1,7 +1,7 @@
 console.log('Loaded!');
 
 var button = document.getElementById('count-button');
-
+/*
 button.onclick = function()
 {
     
@@ -10,8 +10,8 @@ button.onclick = function()
     
     // Get the response and store it in a variable
     request.onreadystatechange = function(){
-        if (request.readyState == XMLHttpRequest.DONE){
-            if (request.status == 200){
+        if (request.readyState === XMLHttpRequest.DONE){
+            if (request.status === 200){
                 //Take action
                 var counter = request.responseText; // Response value accessed as Text
                 var span = document.getElementById('count-span');
@@ -25,7 +25,7 @@ button.onclick = function()
     request.open('GET', 'http://padmasaravan.imad.hasura-app.io/counter', true);
     request.send(null);
  };
-
+*/
 /* Code to change the HTML content from Javascript
 
 var element = document.getElementById('body-text');
