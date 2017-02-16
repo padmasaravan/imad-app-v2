@@ -20,6 +20,11 @@ button.onclick = function()
             }
         }
     };
+    
+    //Make the request
+    
+    request.open('GET', 'http://padmasaravan.imad.hasura-app.io/counter', true);
+    request.send(null);
  };
 
 /* Code to change the HTML content from Javascript
