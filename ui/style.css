@@ -1,7 +1,8 @@
 body {
     font-family: sans-serif;
-    background-color: #BBFFBA;
+    background-color: rgb(89, 89, 142);
     margin-top: 75px;
+    color: #DDDCE0;
 }
 
 .center {
