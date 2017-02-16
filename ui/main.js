@@ -13,7 +13,7 @@ var marginLeft =0;
 img.onclick = function(){
     var interval = setInterval(moveRight,50);  // call the moveRight funtion every 50ms
     function moveRight(){
-        if(marginLeft == 1000){
+        if(marginLeft == 850){
             clearInterval(interval); //Stop the timer
         }else{
             marginLeft = marginLeft + 5;
