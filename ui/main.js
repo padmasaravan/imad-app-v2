@@ -1,4 +1,5 @@
 console.log('Loaded!');
+var button = document.getElementById('')
 
 /* Code to change the HTML content from Javascript
 
