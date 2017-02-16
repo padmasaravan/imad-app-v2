@@ -1,5 +1,7 @@
 console.log('Loaded!');
-var button = document.getElementById('')
+
+var button = document.getElementById('count-button');
+
 
 /* Code to change the HTML content from Javascript
 
