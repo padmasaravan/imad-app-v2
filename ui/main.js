@@ -1,7 +1,14 @@
 console.log('Loaded!');
 
+var counter = 0;
 var button = document.getElementById('count-button');
 
+button.onclick = function()
+{
+    counter++;
+    var span = document.getElementById('count-span');
+    span.innerHTML = counter.toString();
+};
 
 /* Code to change the HTML content from Javascript
 
@@ -10,7 +17,7 @@ element.innerHTML = 'New Text changed by JavaScript';
 
 */
 
-//Code to move the Image to right..when it is clicked on
+/* Code to move the Image to right..when it is clicked on
 
 var img = document.getElementById('body-img');
 var marginLeft =0;
@@ -26,3 +33,4 @@ img.onclick = function(){
         }
     } // End of moveRight fucntion
 }; // End of function
+*/
