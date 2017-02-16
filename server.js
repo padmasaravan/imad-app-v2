@@ -143,8 +143,8 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/ui/flower.jpeg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'flower.jpeg'));
+app.get('/ui/flower.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'flower.jpg'));
 });
 
 
