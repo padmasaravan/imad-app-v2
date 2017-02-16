@@ -9,11 +9,15 @@ element.innerHTML = 'New Text changed by JavaScript';
 
 var img = document.getElementById('body-img');
 var marginLeft =0;
-function moveRight(){
-    marginLeft = marginLeft + 5;
-    img.style.marginLeft = marginLeft + 'px';
-}
+
 img.onclick = function(){
-    var interval = setInterval(moveRight,50);
-    //img.style.marginLeft = '150px';
-};
+    var interval = setInterval(moveRight,50);  // call the moveRight funtion every 50ms
+    function moveRight(){
+        if(marginLeft <=750){
+            marginLeft = marginLeft + 5;
+            img.style.marginLeft = marginLeft + 'px';
+        }else{
+            clearInterval(interval); //Stop the timer
+        }
+    } // End of moveRight fucntion
+}; // End of function
