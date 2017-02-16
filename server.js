@@ -135,6 +135,14 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+// Code to return the counter value when /counter page is accessed
+var count = 0; 
+app.get('/counter', fucntion (req,res) {
+   count++;
+   res.send(count.toString());
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
