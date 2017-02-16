@@ -138,7 +138,7 @@ app.get('/', function (req, res) {
 
 // Code to return the counter value when /counter page is accessed
 var count = 0; 
-app.get('/counter', fucntion (req,res) {
+app.get('/counter', function (req,res) {
    count++;
    res.send(count.toString());
 });
