@@ -20,8 +20,8 @@ button.onclick = function()
     };
     
     //Make the request
-    request.open('GET', 'http://localhost:8080/counter', true); //for localhost
-    // request.open('GET', 'http://padmasaravan.imad.hasura-app.io/counter', true);
+    // request.open('GET', 'http://localhost:8080/counter', true); //for localhost
+    request.open('GET', 'http://padmasaravan.imad.hasura-app.io/counter', true);
     request.send(null);
  };
 
@@ -56,8 +56,8 @@ button.onclick = function()
 	 var name = nameInput.value;
 	 
 	 //Make the request
-    request.open('GET', 'http://localhost:8080/submit-name?name='+name, true); //for localhost
-    // request.open('GET', 'http://padmasaravan.imad.hasura-app.io/submit-name?name='+name, true);
+    // request.open('GET', 'http://localhost:8080/submit-name?name='+name, true); //for localhost
+    request.open('GET', 'http://padmasaravan.imad.hasura-app.io/submit-name?name='+name, true);
     request.send(null);	
  };
  
