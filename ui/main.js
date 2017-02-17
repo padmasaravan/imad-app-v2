@@ -1,7 +1,7 @@
 console.log('Loaded!');
 
 var button = document.getElementById('count-button');
-/*
+
 button.onclick = function()
 {
     
@@ -25,7 +25,7 @@ button.onclick = function()
     request.open('GET', 'http://padmasaravan.imad.hasura-app.io/counter', true);
     request.send(null);
  };
-*/
+
 /* Code to change the HTML content from Javascript
 
 var element = document.getElementById('body-text');
