@@ -9,6 +9,9 @@ body {
     text-align: center;
 }
 
+.left{
+	text-align: left;
+}
 .text-big {
     font-size: 300%;
 }
