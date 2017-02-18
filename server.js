@@ -136,12 +136,6 @@ app.get('/', function (req, res) {
 });
 
 
-// Code to return the counter value when /counter page is accessed
-var count = 0; 
-app.get('/counter', function (req,res) {
-   count++;
-   res.send(count.toString());
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
@@ -155,12 +149,25 @@ app.get('/ui/flower.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'flower.jpg'));
 });
 
+//Code to capture the name sent as a part of the URL
+var comments =[];
+app.get('/post-cmnt', function (req,res) {
+   var name = req.query.name;
+   comments.push(name); // Add the value of name var to the end of the array names
+   var cmnt = req.query.comment;
+   comments.push(cmnt);
+   
+   // JSON Javascript Object Notation
+   res.send(JSON.stringify(comments)); //Converts the content of the names array into a series of String.
+});
+
 
 // To return the HTML template as the response
 app.get('/:articleName', function(req,res){
     var articleName = req.params.articleName; // Getting the value of the parameter from the URL
     res.send( createTemplate(articles[articleName]) );
 });
+
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
