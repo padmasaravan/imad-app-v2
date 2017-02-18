@@ -34,7 +34,7 @@ console.log('Loaded!');
 	 var name = nameInput.value;
 	 
 	 //Make the request
-    request.open('GET', 'http://localhost:8080/post-cmnt?name='+name+'&comment='+cmnt, true); //for localhost
-    // request.open('GET', 'http://padmasaravan.imad.hasura-app.io/submit-name?name='+name, true);
+    //request.open('GET', 'http://localhost:8080/post-cmnt?name='+name+'&comment='+cmnt, true); //for localhost
+     request.open('GET', 'http://padmasaravan.imad.hasura-app.io/submit-name?name='+name, true);
     request.send(null);	
  };
