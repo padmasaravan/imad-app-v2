@@ -23,7 +23,7 @@ var articles = {
     'article-one': {
         title: 'Article One |  Padma Bala',
         heading: 'Article One',
-        date: 'Feb 4 2017',
+        date: 'Mar 4 2017',
         content: `
                 <h4>Section 1</h4>
                 <p>
