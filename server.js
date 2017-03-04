@@ -161,12 +161,12 @@ app.get('/ui/flower.jpg', function (req, res) {
 var pool = new Pool(config);
 
 //Code to test the Database connectivity
-app.get('/test', function(req, res){
+app.get('/test-db', function(req, res){
     pool.query('SELECT * FROM TEST',function(err, result){
         if (err){
             res.status(500).send(err.toString());
         }else{
-            res.send(JSON.stringify(result));
+            res.send(JSON.stringify(result.rows));
         }
     });
 });
