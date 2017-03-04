@@ -185,9 +185,19 @@ app.get('/post-cmnt', function (req,res) {
 
 
 // To return the HTML template as the response
-app.get('/:articleName', function(req,res){
-    var articleName = req.params.articleName; // Getting the value of the parameter from the URL
-    res.send( createTemplate(articles[articleName]) );
+app.get('articles/:articleName', function(req,res){
+    pool.query("SELECT * FROM ARTICLE WHERE TITLE='"+ req.params.articleName+"'", funtion(err, result){
+       if (err) {
+           res.status(500).send(err.toString());
+       }else{
+           if(result.rows.length === 0){
+               res.status(400).send("Data not found");
+           }else{
+                var articleData = result.rows[0];
+                res.send( createTemplate(articleData) );
+           }
+        }
+    });
 });
 
 
