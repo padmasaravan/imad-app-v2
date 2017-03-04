@@ -147,6 +147,11 @@ app.get('/ui/flower.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'flower.jpg'));
 });
 
+//Code to test the Database connectivity
+app.get('/test-db', function(){
+    
+});
+
 //Code to capture the name sent as a part of the URL
 var comments =[];
 app.get('/post-cmnt', function (req,res) {
