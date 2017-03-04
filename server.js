@@ -187,7 +187,7 @@ app.get('/post-cmnt', function (req,res) {
 // To return the HTML template as the response
 app.get('articles/:articleName', function(req,res){
     alert("Inside the articles function");
-    pool.query("SELECT * FROM ARTICLE WHERE TITLE='"+ req.params.articleName+"'", function(err, result){
+   /* pool.query("SELECT * FROM ARTICLE WHERE TITLE='"+ req.params.articleName+"'", function(err, result){
        if (err) {
            res.status(500).send(err.toString());
        }else{
@@ -199,6 +199,7 @@ app.get('articles/:articleName', function(req,res){
            }
         }
     });
+    */
 });
 
 
