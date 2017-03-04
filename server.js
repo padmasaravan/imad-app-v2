@@ -9,7 +9,7 @@ var config = {
     database: 'padmasaravan',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: process.env.DB_PASSWORD
+    password: process.env.DB_PASSWORD // Password is entered here at the time of execution --- from the Env variable
 };
 
 var app = express();
