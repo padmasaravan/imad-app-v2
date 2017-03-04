@@ -57,7 +57,7 @@ var articles = {
     'article-two': {
         title: 'Article Two --  Padma Bala',
         heading: 'Article Two',
-        date: 'Feb 14th 2017',
+        date: 'Mar 14th 2017',
         content: `
                 <h4>Section 1</h4>
                 <p>
@@ -82,7 +82,7 @@ var articles = {
     'article-three': {
         title: 'Article Three --  Padma Bala',
         heading: 'Article Three',
-        date: 'Feb 24th 2017',
+        date: 'Mar 24th 2017',
         content: `
                 <h4>Section 1</h4>
                 <p>
