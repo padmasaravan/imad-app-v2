@@ -157,9 +157,18 @@ app.get('/ui/flower.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'flower.jpg'));
 });
 
+// Create a connection Pool
+var pool = new Pool(config);
+
 //Code to test the Database connectivity
-app.get('/test-db', function(){
-    
+app.get('/test-db', function(res, req){
+    pool.query('SELECT * FROM TEST',function(err, result){
+        if (err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringify(result));
+        }
+    });
 });
 
 //Code to capture the name sent as a part of the URL
