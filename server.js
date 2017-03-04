@@ -161,7 +161,7 @@ app.get('/ui/flower.jpg', function (req, res) {
 var pool = new Pool(config);
 
 //Code to test the Database connectivity
-app.get('/test-db', function(res, req){
+app.get('/test', function(res, req){
     pool.query('SELECT * FROM TEST',function(err, result){
         if (err){
             res.status(500).send(err.toString());
