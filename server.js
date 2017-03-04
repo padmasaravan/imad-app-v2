@@ -19,6 +19,7 @@ app.use(morgan('combined'));
 Assigning values to different sections of the Article pages. Each page's content  is created as a Javascript Object
 */
 
+/*
 var articles = {
     'article-one': {
         title: 'Article One |  Padma Bala',
@@ -96,6 +97,8 @@ var articles = {
                 `
     }
 };
+
+*/
 
 //Function to create the HTML template with the Object sent
 function createTemplate (data){
