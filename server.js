@@ -1,7 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var Pool = require('pg').Pool;
+var Pool = require('pg').Pool; // Postgres client for node
+var crypto = require('crypto'); // Crypto lib - to implement Hashing
 
 //Database Confiquration Details
 var config = {
@@ -74,6 +75,14 @@ app.get('/ui/main.js', function (req, res) {
 
 app.get('/ui/flower.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'flower.jpg'));
+});
+
+// Hashing Fucntion - using Crypto lib
+
+// Code to implement Password Hashing Endpoint
+app.get('/hash/:input', function(req, res){
+   var hashedStr = hash(req.params.input,'some-random-salt');
+   res.send(hashedStr);
 });
 
 // Create a connection Pool
