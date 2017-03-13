@@ -85,7 +85,7 @@ app.get('/ui/flower.jpg', function (req, res) {
 // Hashing Function - using Crypto lib
 function hash (input, salt){
     var hashVal = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
+    return ["pbkdf2", "10000", salt, hashVal.toString('hex')].join('$');
   //  return hashVal.toString('hex');
 }
 
