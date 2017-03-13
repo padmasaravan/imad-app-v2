@@ -97,8 +97,11 @@ app.get('/hash/:input', function(req, res){
 // Code to implement Create User Endpoit
 app.post('/create-user', function(req, res){
    // Get username & password
+   var username = req.body.username;
+   var password = req.body.password;
+   
    // Random salt string
-   var salt = crypto.randomBytes(128).to String('hex');
+   var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash (password, salt);
    
    //Insert into the DB - to create a User entry
