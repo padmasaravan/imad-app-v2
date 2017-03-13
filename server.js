@@ -18,7 +18,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-// To inform express app to load the json content (if any) into req.body variable
+// To inform express app to load the json content (if any) into req.body variable for every incoming request
 app.use(bodyParser.json());
 
 
