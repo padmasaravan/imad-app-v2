@@ -129,6 +129,17 @@ app.post('/create-user', function(req, res){
    });
 });
 
+// Code to check the Login of the user
+app.post('/login', function(req, res){
+    var username = req.body.username;
+    var password = req.body.password;
+    
+    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function(err, result){
+        if (err){
+            res.send(500).send(err);
+        }
+    });
+});
 
 //Code to capture the name sent as a part of the URL
 var comments =[];
