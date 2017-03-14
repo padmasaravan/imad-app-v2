@@ -82,6 +82,21 @@ app.get('/ui/flower.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'flower.jpg'));
 });
 
+// Create a connection Pool
+var pool = new Pool(config);
+
+//Code to test the Database connectivity
+app.get('/test-db', function(req, res){
+    pool.query('SELECT * FROM TEST',function(err, result){
+        if (err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+});
+
+
 // Hashing Function - using Crypto lib
 function hash (input, salt){
     var hashVal = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
@@ -115,19 +130,6 @@ app.post('/create-user', function(req, res){
    });
 });
 
-// Create a connection Pool
-var pool = new Pool(config);
-
-//Code to test the Database connectivity
-app.get('/test-db', function(req, res){
-    pool.query('SELECT * FROM TEST',function(err, result){
-        if (err){
-            res.status(500).send(err.toString());
-        }else{
-            res.send(JSON.stringify(result.rows));
-        }
-    });
-});
 
 //Code to capture the name sent as a part of the URL
 var comments =[];
