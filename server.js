@@ -103,7 +103,7 @@ function hash (input, salt){
     return ["pbkdf2", "10000", salt, hashVal.toString('hex')].join('$');
 }
 
-// Code to implement Password Hashing Endpoint
+// Code to implement --  Hashing Endpoint
 app.get('/hash/:input', function(req, res){
    var hashedStr = hash(req.params.input,'some-random-salt');
    res.send(hashedStr);
@@ -137,6 +137,13 @@ app.post('/login', function(req, res){
     pool.query('SELECT * FROM "user" WHERE username = $1', [username], function(err, result){
         if (err){
             res.status(500).send(err.toString());
+        }
+        else
+        {
+            if (result.rows[0].length === 0){
+                res.status(403);
+                res.send("Username / Password - Invalid");
+            }
         }
     });
 });
