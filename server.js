@@ -141,8 +141,20 @@ app.post('/login', function(req, res){
         else
         {
             if (result.rows[0].length === 0){
-                res.status(403);
-                res.send("Username / Password - Invalid");
+                res.send(403).send("Username / Password - Invalid");
+            }
+            else{
+                // Match the password
+                var dbString = result.rows[0].password;
+                var salt = dbString.split($)[2]; //Becoz the salt - value is stored as the 3rd value -while storing in the password DB...joined with $
+                var hashPass = hash(password,salt);
+                if (hashPass === dbString){
+                    res.send("Login successfull");
+                }
+                else{
+                    res.send(403).send("Username / Password - Invalid");
+                }
+                
             }
         }
     });
