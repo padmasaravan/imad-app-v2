@@ -14,7 +14,12 @@ console.log('Loaded!');
 				 // Populate the list using the server's response
 				alert('User logged in');
 				console.log("Login successful");
+			}else if(request.status === 403){
+			    alert('Username/ Password is incorrect');
+			}else if (request.status === 500){
+			    alert('Ooops !! Something went wrong with the Server');
 			}
+			
 		}
 	};
 
@@ -26,6 +31,7 @@ console.log('Loaded!');
 	 //Make the request
 
     //request.open('POST', 'http://localhost:8080/login', true); //for localhost
-     request.open('POST', 'http://padmasaravan.imad.hasura-app.io/login', true);
+    request.open('POST', 'http://padmasaravan.imad.hasura-app.io/login', true);
+    request.setRequestHeader('Content-Type', 'application/json') ;
     request.send(JSON.stringify({username:userName, password:passWord}));	
  };
