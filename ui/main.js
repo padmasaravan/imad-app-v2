@@ -33,7 +33,7 @@ console.log('Loaded!');
 	 //Make the request
 
     //request.open('POST', 'http://localhost:8080/login', true); //for localhost
-    request.open('POST', 'http://padmasaravan.imad.hasura-app.io/login', true);
     request.setRequestHeader('Content-Type', 'application/json');
+    request.open('POST', 'http://padmasaravan.imad.hasura-app.io/login', true);
     request.send(JSON.stringify({username:userName, password:passWord}));	
  };
