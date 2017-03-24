@@ -21,7 +21,8 @@ console.log('Loaded!');
 	// Code to capture the username and password
 	var userName = document.getElementById('username').value;
 	var passWord = document.getElementById('password').value;
-
+    alert(userName);
+    alert(passWord);
 	 //Make the request
 
     //request.open('POST', 'http://localhost:8080/login', true); //for localhost
