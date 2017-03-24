@@ -146,7 +146,7 @@ app.post('/login', function(req, res){
             else{
                 // Match the password
                 var dbString = result.rows[0].password;
-                var salt = dbString.split($)[2]; //Becoz the salt - value is stored as the 3rd value -while storing in the password DB...joined with $
+                var salt = dbString.split('$')[2]; //Becoz the salt - value is stored as the 3rd value -while storing in the password DB...joined with $
                 var hashPass = hash(password,salt);
                 if (hashPass === dbString){
                     res.send("Login successfull");
