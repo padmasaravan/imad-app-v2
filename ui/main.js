@@ -6,11 +6,8 @@ console.log('Loaded!');
  {
    // Create a request
     var request = new XMLHttpRequest();
-    alert('Login button clicked');
     // Get the response and store it in a variable
     request.onreadystatechange = function(){
-        alert(request.status);
-        alert(request.statusText);
         if (request.readyState === XMLHttpRequest.DONE){
          
             if (request.status === 200){
