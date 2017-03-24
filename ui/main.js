@@ -36,7 +36,7 @@ console.log('Loaded!');
 	 //Make the request
     
     
-    //request.open('GET', 'http://localhost:8080/post-cmnt?name='+name+'&comment='+cmnt, true); //for localhost
-     request.open('GET', 'http://padmasaravan.imad.hasura-app.io/post-cmnt?name='+name+'&comment='+cmnt, true);
-    request.send(null);	
+    //request.open('POST', 'http://localhost:8080/login', true); //for localhost
+     request.open('POST', 'http://padmasaravan.imad.hasura-app.io/login', true);
+    request.send(JSON.stringify({username:uName, password:pWord}));	
  };
