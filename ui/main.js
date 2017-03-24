@@ -13,7 +13,7 @@ console.log('Loaded!');
             if (request.status === 200){
 				 // Populate the list using the server's response
 				alert('User logged in');
-				
+				console.log("Login successful");
 			}
 		}
 	};
