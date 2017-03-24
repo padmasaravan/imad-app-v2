@@ -9,8 +9,9 @@ console.log('Loaded!');
     alert('Login button clicked');
     // Get the response and store it in a variable
     request.onreadystatechange = function(){
+           alert(request.status);
         if (request.readyState === XMLHttpRequest.DONE){
-            alert(request.status);
+         
             if (request.status === 200){
 				 // Populate the list using the server's response
 				alert('User logged in');
