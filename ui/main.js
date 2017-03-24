@@ -27,11 +27,11 @@ console.log('Loaded!');
 		}
 	};
 
-	// Code to capture the comment and name of the user
-	var cmntInput = document.getElementById('text-comnt');
-	var cmnt = cmntInput.value;
-	var nameInput = document.getElementById('name');
-	 var name = nameInput.value;
+	// Code to capture the username and password
+	var userName = document.getElementById('username');
+	var uName = userName.value;
+	var password = document.getElementById('password');
+	 var pWord = password.value;
 	 
 	 //Make the request
     
