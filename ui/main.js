@@ -28,15 +28,12 @@ console.log('Loaded!');
 	};
 
 	// Code to capture the username and password
-	var userName = document.getElementById('username');
-	var uName = userName.value;
-	var password = document.getElementById('password');
-	 var pWord = password.value;
-	 
+	var userName = document.getElementById('username').value;
+	var passWord = document.getElementById('password').value;
+
 	 //Make the request
-    
-    
+
     //request.open('POST', 'http://localhost:8080/login', true); //for localhost
      request.open('POST', 'http://padmasaravan.imad.hasura-app.io/login', true);
-    request.send(JSON.stringify({username:uName, password:pWord}));	
+    request.send(JSON.stringify({username:userName, password:passWord}));	
  };
