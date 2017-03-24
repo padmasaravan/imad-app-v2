@@ -10,6 +10,7 @@ console.log('Loaded!');
     // Get the response and store it in a variable
     request.onreadystatechange = function(){
         if (request.readyState === XMLHttpRequest.DONE){
+            alert(request.status);
             if (request.status === 200){
 				 // Populate the list using the server's response
 				alert('User logged in');
@@ -19,7 +20,6 @@ console.log('Loaded!');
 			}else if (request.status === 500){
 			    alert('Ooops !! Something went wrong with the Server');
 			}
-			
 		}
 	};
 
