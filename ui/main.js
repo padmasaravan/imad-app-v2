@@ -1,7 +1,7 @@
 console.log('Loaded!');
 
   // Make a request to server once the Button is clicked
- var subBtn = document.getElementById('submit-Btn');
+ var subBtn = document.getElementById('login-Btn');
  subBtn.onclick = function()
  {
    // Create a request
@@ -12,17 +12,8 @@ console.log('Loaded!');
         if (request.readyState === XMLHttpRequest.DONE){
             if (request.status === 200){
 				 // Populate the list using the server's response
-				 var cmnts = request.responseText;
-				 cmnts = JSON.parse(cmnts);
-				 var disCmnt= [];
-				 for (i=0; i<cmnts.length;i++)
-				 {
-					 disCmnt+= '<br/>'+cmnts[i]+' : ';
-					 i++;
-					 disCmnt+= cmnts[i]+'<br/>';
-				 }
-				 var pc = document.getElementById('comments');	
-				 pc.innerHTML = disCmnt;
+				alert('User logged in');
+				
 			}
 		}
 	};
