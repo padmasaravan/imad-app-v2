@@ -4,6 +4,7 @@ var path = require('path');
 var Pool = require('pg').Pool; // Postgres client for node
 var crypto = require('crypto'); // Crypto lib - to implement Hashing
 var bodyParser = require('body-parser'); // Express library - bodyParser - to load the data into req.body variable
+var session = require('express-session');
 
 //Database Confiquration Details
 var config = {
@@ -20,7 +21,10 @@ app.use(morgan('combined'));
 
 // To inform express app to load the json content (if any) into req.body variable for every incoming request
 app.use(bodyParser.json());
-
+app.use(session({
+    secret: 'someRandomWord',
+    cookie: { maxAge: 1000*60*60*24*30}
+}));
 
 //Function to create the HTML template with the Object sent
 function createTemplate (data){
