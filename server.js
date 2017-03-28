@@ -171,11 +171,15 @@ app.post('/login', function(req, res){
 
 app.get('/check-login', function(req, res){
     if (req.session && req.session.auth && req.session.auth.userId){
-        res.send('Hi there,'+req.session.auth.userId.toString()+' !!! U are logged in ....');
+        res.send('Hi there, '+req.session.auth.userId.toString()+' !!! U are logged in ....');
     }
     else{
         res.send('You are not logged in...');
     }
+});
+
+app.get('/logout', function(req, res){
+    
 });
 
 //Code to capture the name sent as a part of the URL
