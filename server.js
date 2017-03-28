@@ -179,7 +179,8 @@ app.get('/check-login', function(req, res){
 });
 
 app.get('/logout', function(req, res){
-    
+    delete req.session.auth;
+    res.send('Logout Successful');
 });
 
 //Code to capture the name sent as a part of the URL
