@@ -164,10 +164,13 @@ app.post('/login', function(req, res){
                 else{
                     res.send(403).send("Username / Password - Invalid");
                 }
-                
             }
         }
     });
+});
+
+app.get('/check-login', function(req, res){
+    
 });
 
 //Code to capture the name sent as a part of the URL
