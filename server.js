@@ -153,6 +153,12 @@ app.post('/login', function(req, res){
                 var salt = dbString.split('$')[2]; //Becoz the salt - value is stored as the 3rd value -while storing in the password DB...joined with $
                 var hashPass = hash(password,salt);
                 if (hashPass === dbString){
+                    
+                    //set the session
+                    req.session.auth = {userId: results.rows[0].id};
+                    
+                    // set cookie with a session id
+                    //Internally on the server side, it maps the Session id to an Object(auth : UserID)
                     res.send("Login successfull");
                 }
                 else{
