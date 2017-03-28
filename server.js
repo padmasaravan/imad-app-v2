@@ -155,7 +155,7 @@ app.post('/login', function(req, res){
                 if (hashPass === dbString){
                     
                     //set the session
-                    req.session.auth = {userId: results.rows[0].id};
+                    req.session.auth = {userId: result.rows[0].id};
                     
                     // set cookie with a session id
                     //Internally on the server side, it maps the Session id to an Object(auth : UserID)
