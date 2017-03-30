@@ -43,7 +43,7 @@ function createTemplate (data){
          <!-- Adding the CSS elements -->
         <link href="/ui/style.css" rel="stylesheet" />
     
-         <title class="center"> ${title}   </title>
+         <title><center> ${title}</center>   </title>
     </head>
     <body>
         <div class="pageBody">
@@ -60,6 +60,13 @@ function createTemplate (data){
             <div>
                 ${content}
             </div>
+        </div>
+        <hr/>
+        <h4> Comments </h4>
+        <div id="comment_form">
+        </div>
+        <div id="comments">
+        <center> Comments....Loading....</center>
         </div>
     </body>
     </html> 
