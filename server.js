@@ -37,14 +37,13 @@ function createTemplate (data){
     <html>
     <!-- HTML file for the page Article One -->
     <head>
-        <title class="center"> ${title}   </title>
-        
         <!-- The tag is for Mobile browsers so that the page is not zoomed out -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
          <!-- Adding the CSS elements -->
         <link href="/ui/style.css" rel="stylesheet" />
     
+         <title class="center"> ${title}   </title>
     </head>
     <body>
         <div class="pageBody">
