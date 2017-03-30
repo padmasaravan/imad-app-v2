@@ -66,9 +66,10 @@ function createTemplate (data){
         <div id="comment_form">
         </div>
         <div id="comments">
-        <center> Comments....Loading....</center>
+            <center> Comments....Loading....</center>
         </div>
-    </body>
+        <script type="text/javascript" src="/ui/article.js"></script>
+     </body>
     </html> 
     
     `;
