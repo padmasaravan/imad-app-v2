@@ -37,7 +37,7 @@ function createTemplate (data){
     <html>
     <!-- HTML file for the page Article One -->
     <head>
-        <title> ${title}   </title>
+        <title class="center"> ${title}   </title>
         
         <!-- The tag is for Mobile browsers so that the page is not zoomed out -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
