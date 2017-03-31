@@ -43,7 +43,7 @@ function createTemplate (data){
          <!-- Adding the CSS elements -->
         <link href="/ui/style.css" rel="stylesheet" />
     
-         <title><center> ${title}</center>   </title>
+         <title class="center"> ${title} </title>
     </head>
     <body>
         <div class="pageBody">
