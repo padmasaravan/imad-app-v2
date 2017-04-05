@@ -1,5 +1,5 @@
 console.log('Loaded!');
-
+/*
   // Make a request to server once the Button is clicked
  var subBtn = document.getElementById('login-Btn');
  subBtn.onclick = function()
@@ -33,3 +33,4 @@ console.log('Loaded!');
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username:userName, password:passWord}));	
  };
+*/
