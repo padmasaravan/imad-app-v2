@@ -81,7 +81,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('ui/:filename', function(req, res){
+app.get('/ui/:filename', function(req, res){
    res.sendFile(path.join(__dirname,'ui', req.params.filename)); 
 });
 
