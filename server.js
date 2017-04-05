@@ -85,17 +85,6 @@ app.get('ui/:filename', function(req, res){
    res.sendFile(path.join(__dirname,'ui', req.params.filename)); 
 });
 
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
-
-app.get('/ui/flower.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'flower.jpg'));
-});
 
 // Create a connection Pool
 var pool = new Pool(config);
