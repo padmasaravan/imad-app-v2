@@ -195,6 +195,17 @@ app.get('/post-cmnt', function (req,res) {
    res.send(JSON.stringify(comments)); //Converts the content of the names array into a series of String.
 });
 
+app.get('/get-articles', function (req, res) {
+   // make a select request
+   // return a response with the results
+   pool.query('SELECT * FROM article ORDER BY date DESC', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send(JSON.stringify(result.rows));
+      }
+   });
+});
 
 // Get the Article page contents from the Database and create a HTML Template
 app.get('/articles/:articleName', function(req,res){
