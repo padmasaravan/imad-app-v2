@@ -118,6 +118,7 @@ function loadLoginForm () {
 }
 
 function loadLoggedInUser (username) {
+    alert(username);
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
         <h3> Hi <i>${username}</i></h3>
