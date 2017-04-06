@@ -36,7 +36,6 @@ console.log('Loaded!');
 */
 
 function loadLoginForm () {
-    alert('Inside login load form');
     var loginHtml = `
         <h3>Login/Register</h3>
         <input type="text" id="username" placeholder="username" />
@@ -118,7 +117,6 @@ function loadLoginForm () {
 }
 
 function loadLoggedInUser (username) {
-    alert(username);
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
         <h3> Hi <i>${username}</i></h3>
@@ -127,7 +125,6 @@ function loadLoggedInUser (username) {
 }
 
 function loadLogin () {
-    alert('loadLogin');
     // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
