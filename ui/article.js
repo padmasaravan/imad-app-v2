@@ -59,10 +59,17 @@ function loadLogin () {
 
 function escapeHTML (text)
 {
+    /*
     var $text = document.createTextNode(text);
     var $div = document.createElement('div');
     $div.appendChild($text);
     return $div.innerHTML;
+    */
+    var t = document.createTextNode(text);
+    var d = document.createElement('div');
+    d.appendChild(t);
+    return d.innerHTML;
+    
 }
 
 function loadComments () {
